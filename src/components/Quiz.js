@@ -6,7 +6,7 @@ export default function Quiz() {
   const [currindex, setcurrindex] = useState(0);
   const [selectedanswer, setselectedanswer] = useState("");
   const [score, setscore] = useState(0);
-  const [lefttime, setlefttime] = useState(15);
+  const [lefttime, setlefttime] = useState('');
   const currquestion = Question[currindex];
   const [colors, setcolors] = useState("black");
   const [quizStarted, setQuizStarted] = useState(false);
@@ -44,6 +44,7 @@ export default function Quiz() {
 
   const startQuiz = () => {
     setQuizStarted(true); 
+    setlefttime(15)
   };
 
   const handleanswer = (answer) => {
@@ -55,6 +56,7 @@ export default function Quiz() {
     setscore(0);
     setselectedanswer("");
     setcompleted(false);
+    setlefttime(15)
   };
 
   if (completed) {
@@ -71,6 +73,7 @@ export default function Quiz() {
     );
   }
   function handlePrevQuestion() {
+    setlefttime(15)
     setcurrindex(currindex-1)
   }
 
