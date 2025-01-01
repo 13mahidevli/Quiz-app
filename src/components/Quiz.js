@@ -31,7 +31,7 @@ export default function Quiz() {
     if (lefttime > -1) {
       const timeinterval = setInterval(() => {
         setlefttime((prevtime) => prevtime - 1);
-      }, 200);
+      }, 1000);
       return () => clearInterval(timeinterval);
     } else {
       handleNextQuestion();
