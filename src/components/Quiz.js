@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Question from "./Questions";
-
+import imgs from './quiz.jpg'
 export default function Quiz() {
   const [completed, setcompleted] = useState(false);
   const [currindex, setcurrindex] = useState(0);
   const [selectedanswer, setselectedanswer] = useState("");
   const [score, setscore] = useState(0);
-  const [lefttime, setlefttime] = useState('');
+  const [lefttime, setlefttime] = useState("");
   const currquestion = Question[currindex];
   const [colors, setcolors] = useState("black");
   const [quizStarted, setQuizStarted] = useState(false);
@@ -35,7 +35,7 @@ export default function Quiz() {
   }, [lefttime]);
 
   useEffect(() => {
-    if (lefttime < 6) {
+    if (lefttime <= 6) {
       setcolors("red");
     } else {
       setcolors("black");
@@ -43,8 +43,9 @@ export default function Quiz() {
   }, [lefttime]);
 
   const startQuiz = () => {
-    setQuizStarted(true); 
-    setlefttime(15)
+    setQuizStarted(true);
+    setlefttime(15);
+    setcurrindex(0);
   };
 
   const handleanswer = (answer) => {
@@ -56,7 +57,7 @@ export default function Quiz() {
     setscore(0);
     setselectedanswer("");
     setcompleted(false);
-    setlefttime(15)
+    setlefttime(15);
   };
 
   if (completed) {
@@ -73,14 +74,17 @@ export default function Quiz() {
     );
   }
   function handlePrevQuestion() {
-    setlefttime(15)
-    setcurrindex(currindex-1)
+    setlefttime(15);
+    setcurrindex(currindex - 1);
   }
 
   return (
     <div>
       {!quizStarted && (
         <div>
+          <div>
+          <img className="img" src={imgs} alt="" />
+          </div>
           <button onClick={startQuiz}>start quiz</button>
         </div>
       )}
@@ -113,8 +117,13 @@ export default function Quiz() {
               ))}
             </div>
             <button
+              disabled={currindex == 0 ? true : false}
               className="next-btn mx-5"
-              style={{ backgroundColor: "blue", color: "white" }}
+              style={{
+                backgroundColor: "blue",
+                color: "white",
+                backgroundColor: currindex == 0 ? "grey" : "blue",
+              }}
               onClick={handlePrevQuestion}
             >
               Previous Q..
