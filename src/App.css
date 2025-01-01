@@ -47,13 +47,18 @@ body {
 }
 
 .question-text {
-  font-size: 2.25rem;
+  font-size: 2.0rem;
   font-weight: 500;
   color: #555;
   margin: 20px 5px;
   text-align: left;
 }
-
+.button{
+  background-color: #333;
+  padding: 10px;
+  margin: 4px;
+  border-radius: 10px;
+}
 /* Option Button Styles */
 .options-container {
   margin: 20px 0;

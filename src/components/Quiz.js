@@ -48,16 +48,25 @@ export default function Quiz() {
   return (
     <div className="mx-2 text-center my-5 quiz-container">
       <h2 className="question-number">QUIZ APP</h2>
-      <h3 className="question-text">{currindex+1})  {currquestion.question}</h3>
+      <h3 className="question-text">
+        {currindex + 1}) {currquestion.question}
+      </h3>
       <div className="my-3 options-container">
         {currquestion.options.map((option, index) => (
-          <div
-            key={index}
-            onClick={() => handleanswer(option)}
-            className="mx-1 option-btn"
-          >
-            {option}
-          </div>
+          <>
+            <div
+              key={index}
+              onClick={() => handleanswer(option)}
+              className="mx-1 option-btn"
+            >
+              {option}
+            </div>
+          </>
+        ))}
+      </div>
+      <div>
+        {Question.map(() => (
+          <button className="button"></button>
         ))}
       </div>
       <button
