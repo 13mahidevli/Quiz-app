@@ -110,14 +110,14 @@ export default function Quiz() {
               ))}
             </div>
             <button
-              className="next-btn"
+              className="next-btn mx-5"
               style={{ backgroundColor: "blue", color: "white" }}
               onClick={handlePrevQuestion}
             >
               Previous Q..
             </button>
             <button
-              className="next-btn"
+              className="next-btn mx-5"
               style={{ backgroundColor: "blue", color: "white" }}
               onClick={handleNextQuestion}
             >
