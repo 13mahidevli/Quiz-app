@@ -24,14 +24,14 @@ export default function Quiz() {
     } else {
       setcompleted(true);
     }
-    setlefttime(100);
+    setlefttime(20);
   };
 
   useEffect(() => {
     if (lefttime > -1) {
       const timeinterval = setInterval(() => {
         setlefttime((prevtime) => prevtime - 1);
-      }, 1000);
+      }, 200);
       return () => clearInterval(timeinterval);
     } else {
       handleNextQuestion();
@@ -51,7 +51,7 @@ export default function Quiz() {
   const startQuiz = () => {
     setnumber(0);
     setQuizStarted(true);
-    setlefttime(100);
+    setlefttime(20);
     setcurrindex(0);
   };
 
@@ -66,7 +66,7 @@ export default function Quiz() {
     setscore(0);
     setselectedanswer("");
     setcompleted(false);
-    setlefttime(100);
+    setlefttime(20);
     setnumber(0);
   };
 
@@ -87,7 +87,7 @@ export default function Quiz() {
 
   // prev... questions
   function handlePrevQuestion() {
-    setlefttime(100);
+    setlefttime(20);
     setcurrindex(currindex - 1);
   }
 
