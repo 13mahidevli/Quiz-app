@@ -6,7 +6,8 @@ body {
   font-family: Arial, sans-serif;
   margin: auto;
   padding: 0;
-  background: linear-gradient(to right, grey, #fbfafa);
+  height: 100vh;
+  background: linear-gradient(to top, grey, #fbfafa);
 }
 .quiz-app {
   text-align: center;
