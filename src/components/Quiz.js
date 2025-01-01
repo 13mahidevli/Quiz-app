@@ -70,6 +70,9 @@ export default function Quiz() {
       </div>
     );
   }
+  function handlePrevQuestion() {
+    setcurrindex(currindex-1)
+  }
 
   return (
     <div>
@@ -106,6 +109,13 @@ export default function Quiz() {
                 <button className="button"></button>
               ))}
             </div>
+            <button
+              className="next-btn"
+              style={{ backgroundColor: "blue", color: "white" }}
+              onClick={handlePrevQuestion}
+            >
+              Previous Q..
+            </button>
             <button
               className="next-btn"
               style={{ backgroundColor: "blue", color: "white" }}
