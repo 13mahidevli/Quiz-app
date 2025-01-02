@@ -107,11 +107,11 @@ export default function Quiz() {
       {quizStarted && (
         <>
           <div className="mx-2 text-center my-5 quiz-container">
-            <h2 className="question-number">QUIZ APP</h2>
+            <h2 className="heading">QUIZ APP</h2>
 
             {/* to show time  */}
             <div className="timer">
-              <p style={{ color: colors }}>Time Remaining: {lefttime}s</p>
+              <p style={{ color: colors }}>Time Left: {lefttime}s</p>
             </div>
 
             {/* to write question  */}
@@ -134,6 +134,31 @@ export default function Quiz() {
               ))}
             </div>
 
+            <div className="manage-button">
+              {/* prev.. button  */}
+              <button
+                disabled={currindex == 0 ? true : false}
+                className="next-btn"
+                style={{
+                  backgroundColor: "blue",
+                  color: "white",
+                  backgroundColor: currindex == 0 ? "grey" : "blue",
+                }}
+                onClick={handlePrevQuestion}
+              >
+                Previous Q..
+              </button>
+
+              {/* next button  */}
+              <button
+                className="next-btn "
+                style={{ backgroundColor: "blue", color: "white" }}
+                onClick={handleNextQuestion}
+              >
+                Next Question
+              </button>
+            </div>
+
             {/* to trace the number of question  */}
             <div>
               {Question.map((button, index) => (
@@ -146,29 +171,6 @@ export default function Quiz() {
                 ></button>
               ))}
             </div>
-
-            {/* prev.. button  */}
-            <button
-              disabled={currindex == 0 ? true : false}
-              className="next-btn mx-5"
-              style={{
-                backgroundColor: "blue",
-                color: "white",
-                backgroundColor: currindex == 0 ? "grey" : "blue",
-              }}
-              onClick={handlePrevQuestion}
-            >
-              Previous Q..
-            </button>
-
-            {/* next button  */}
-            <button
-              className="next-btn mx-5"
-              style={{ backgroundColor: "blue", color: "white" }}
-              onClick={handleNextQuestion}
-            >
-              Next Question
-            </button>
           </div>
         </>
       )}

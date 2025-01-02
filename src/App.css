@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background: linear-gradient(to top, grey, #fbfafa);
 }
+
 .quiz-app {
   text-align: center;
   margin-top: 50px;
@@ -26,6 +27,7 @@ ul {
 li {
   margin: 10px 0;
 }
+
 .img{
   max-width: 400px;
   height: 25vh;
@@ -33,6 +35,7 @@ li {
   border-radius: 50%;
   margin-top: 30vh;
 }
+
 .timer {
   font-size: 20px;
   color: red;
@@ -43,18 +46,11 @@ li {
   margin-top: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
 button:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
-/* Container Styles */
+
 .quiz-container {
   border: 3px solid rgb(214, 214, 214);
   max-width: 800px;
@@ -76,11 +72,11 @@ button:disabled {
   text-align: center;
 }
 
-/* Heading Styles */
 .quiz-completed-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
+  text-transform: uppercase;
 }
 
 .quiz-score {
@@ -88,10 +84,16 @@ button:disabled {
   margin-top: 10px;
 }
 
-.question-number {
-  font-size: 1.7rem;
+.heading {
+  font-size: 2rem;
   font-weight: 700;
   color: #333;
+}
+
+.timer{
+  font-size: 17px;
+  text-align: right;
+  text-decoration: underline;
 }
 
 .question-text {
@@ -101,13 +103,17 @@ button:disabled {
   margin: 20px 5px;
   text-align: left;
 }
+
 .button{
+  text-transform: capitalize;
   background-color: #333;
-  padding: 10px;
+  padding: 8px;
   margin: 4px;
   border-radius: 10px;
+  border: 1px solid grey;
+  outline: none;
 }
-/* Option Button Styles */
+
 .options-container {
   margin: 20px 0;
   display: flex;
@@ -119,6 +125,7 @@ button:disabled {
 .option-btn {
   padding: 14px 20px;
   margin: 5px;
+  width: 750px;
   text-transform: capitalize;
   font-size: 19px;
   font-weight: 700;
@@ -136,23 +143,29 @@ button:disabled {
   color: black;
 }
 
-/* Next Button Styles */
+button{
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.manage-button{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
 .next-btn,
 .restart-btn {
   padding: 10px 20px;
   background-color: blue;
   color: white;
+  text-transform: capitalize;
   border: none;
+  outline: none;
   border-radius: 4px;
   font-size: 1.1rem;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.next-btn:hover,
-.restart-btn:hover {
-  background-color: #003366;
+  transition: background-color 0.1s ease;
 }
 
 /* Mobile Responsiveness */
@@ -167,39 +180,64 @@ button:disabled {
 .restart-btn {
   padding: 7px 18px;
   font-size: 1.03rem;
+}  
+.option-btn{
+  width: 480px;
 }
-  
 }
-@media (max-width: 440px) {
+
+@media (max-width: 500px) {
   .question-text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  .button{
+    padding: 5.5px;
   }
   .option-btn {
     margin: 1px;
+    margin-left: 10px;
     font-size: 16px;
     font-weight: 500;
+    padding: 8px 8px;
+    max-width: 330px;
   }
   .next-btn,
 .restart-btn {
-  padding: 7px 17px;
+  padding: 5px 15px;
   font-size: 0.7rem;
-  margin-top: 14px;
+  margin: 5px;
+}
+.heading{
+  font-size: 26px;
+  font-weight: 800;
 }
 }
-@media (max-width:300px) {
+
+@media (max-width:330px) {
   .question-text {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
   }
   .option-btn {
-    margin: 0.6px;
-    font-size: 13px;
+    margin: 0.4px;
+    font-size: 10px;
     font-weight: 500;
-    padding: 10px 20px;
+    padding: 5px 15px;
+    width: 250px;
   }
   .next-btn,
 .restart-btn {
-  padding: 7px 17px;
-  font-size: 0.5rem;
-  margin-top: 10px;
+  padding: 3px 8px;
+  font-size: 0.52rem;
+  margin: 5px;
+}
+.button{
+  padding: 3px;
+}
+.timer{
+  font-size: 10px;
+}
+.heading{
+  font-size: 20px;
+  font-weight: 800;
 }
 }
