@@ -125,7 +125,6 @@ button:disabled {
 .option-btn {
   padding: 14px 20px;
   margin: 5px;
-  width: 750px;
   text-transform: capitalize;
   font-size: 19px;
   font-weight: 700;
@@ -181,12 +180,9 @@ button{
   padding: 7px 18px;
   font-size: 1.03rem;
 }  
-.option-btn{
-  width: 480px;
-}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 440px) {
   .question-text {
     font-size: 1.4rem;
   }
@@ -195,11 +191,9 @@ button{
   }
   .option-btn {
     margin: 1px;
-    margin-left: 10px;
     font-size: 16px;
     font-weight: 500;
     padding: 8px 8px;
-    max-width: 330px;
   }
   .next-btn,
 .restart-btn {
@@ -213,7 +207,7 @@ button{
 }
 }
 
-@media (max-width:330px) {
+@media (max-width:300px) {
   .question-text {
     font-size: 1.0rem;
   }
@@ -222,7 +216,6 @@ button{
     font-size: 10px;
     font-weight: 500;
     padding: 5px 15px;
-    width: 250px;
   }
   .next-btn,
 .restart-btn {
